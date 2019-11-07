@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import {
@@ -15,8 +14,9 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import Brand from './components/header/Brand';
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+
 
 const lightTheme = () => ({
     ...themes['common'],
@@ -44,6 +44,7 @@ function App() {
     return (
         <ThemeProvider theme = {theme}>
             {/*<div>*/}
+            <GlobalStyle/>
                 <Header/>
                 <div className="App">
                     {/*<Navigation/>*/}
@@ -53,8 +54,9 @@ function App() {
                         <Route path='/contact' component={Contact} />
                         <Route path='/about' component={About} />
                     </Switch>
-                    <GlobalStyle/>
+                    
                 </div>
+                <Footer/>
             {/*</div>*/}
 
         </ThemeProvider>
