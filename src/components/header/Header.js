@@ -1,7 +1,8 @@
 /**
  * Created by vulong on 05/11/2019.
  */
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
 
@@ -34,10 +35,13 @@ const Header = (props) => {
                 </BurgerWrapper>
                 <Brand />
                 <NavLinks style={linkAnimation}>
-                    <a href="/">link n1</a>
-                    <a href="/">link n2</a>
-                    <a href="/">link n3</a>
-                    <a href="/">link n4</a>
+                    <Link to={'/'} className="nav-link"> Home </Link>
+                    <Link to={'/contact'} className="nav-link">Contact</Link>
+                    <Link to={'/about'} className="nav-link">About</Link>
+                    <a href="/contact">link n1</a>
+                    {/*<a href="/">link n2</a>*/}
+                    {/*<a href="/">link n3</a>*/}
+                    {/*<a href="/">link n4</a>*/}
                 </NavLinks>
 
             </FlexContainer>
@@ -53,7 +57,7 @@ const Header = (props) => {
 export default Header
 
 const NavBar = styled(animated.nav)`
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   left: 0;

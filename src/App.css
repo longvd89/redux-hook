@@ -1,4 +1,12 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .App {
+  flex: 1 0 auto;
+  padding: 10px;
   text-align: center;
 }
 
