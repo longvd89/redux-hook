@@ -43,16 +43,20 @@ function App() {
 
     return (
         <ThemeProvider theme = {theme}>
-            <div className="App">
-                <Navigation/>
+            {/*<div>*/}
                 <Header/>
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/contact' component={Contact} />
-                    <Route path='/about' component={About} />
-                </Switch>
-                <GlobalStyle/>
-            </div>
+                <div className="App">
+                    {/*<Navigation/>*/}
+
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route path='/contact' component={Contact} />
+                        <Route path='/about' component={About} />
+                    </Switch>
+                    <GlobalStyle/>
+                </div>
+            {/*</div>*/}
+
         </ThemeProvider>
 
     );
