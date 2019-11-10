@@ -1,13 +1,15 @@
 /**
  * Created by vulong on 05/11/2019.
  */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from "styled-components";
+import { SidebarContext } from '../../App'
 
-const Burgermenu = (props) => {
+const Burgermenu = () => {
+    const { toggleSidebar, isSidebarOpen } = useContext(SidebarContext)
     return (
-        <Wrapper onClick={props.handleNavbar}>
-            <div className={ props.navbarState ? "open" : "" }>
+        <Wrapper onClick={toggleSidebar}>
+            <div className={isSidebarOpen ? "open" : "" }>
                 <span>&nbsp;</span>
                 <span>&nbsp;</span>
                 <span>&nbsp;</span>

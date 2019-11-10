@@ -9,8 +9,9 @@ import { useSpring, animated, config } from "react-spring";
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
+import OutsideAlerter from '../OutsideAlerter';
 
-const Header = (props) => {
+const Header = () => {
     const onScroll = (arg) => console.log(arg)
 
     useEffect(() => {
@@ -30,14 +31,11 @@ const Header = (props) => {
     });
 
     return (
-        <>
+      <React.Fragment>
         <NavBar style={barAnimation}>
             <FlexContainer>
                 <BurgerWrapper>
-                    <BurgerMenu
-                        navbarState={props.navbarState}
-                        handleNavbar={props.handleNavbar}
-                    />
+                    <BurgerMenu />
                 </BurgerWrapper>
                 <Brand />
                 <NavLinks style={linkAnimation}>
@@ -52,11 +50,11 @@ const Header = (props) => {
 
             </FlexContainer>
         </NavBar>
-        <CollapseMenu
-            navbarState={props.navbarState}
-            handleNavbar={props.handleNavbar}
-        />
-        </>
+        {/* <CollapseMenu
+            isSidebarOpen={isSidebarOpen}
+            toggleSidebar={toggleSidebar}
+        /> */}
+      </React.Fragment>
     )
 }
 

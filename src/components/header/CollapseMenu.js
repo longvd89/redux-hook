@@ -1,15 +1,17 @@
 /**
  * Created by vulong on 05/11/2019.
  */
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 
 import { useSpring, animated } from 'react-spring';
+import { SidebarContext } from '../../App';
 
-const CollapseMenu = (props) => {
-    const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
+const CollapseMenu = () => {
+    const { isSidebarOpen, toggleSidebar } = useContext(SidebarContext)
+    const { open } = useSpring({ open: isSidebarOpen ? 0 : 1 });
 
-    if (props.navbarState === true) {
+    if (isSidebarOpen === true) {
         return (
             <CollapseWrapper style={{
                 transform: open.interpolate({
@@ -19,10 +21,10 @@ const CollapseMenu = (props) => {
             }}
             >
                 <NavLinks>
-                    <li><a href="/" onClick={props.handleNavbar}>link n1</a></li>
-                    <li><a href="/" onClick={props.handleNavbar}>link n2</a></li>
-                    <li><a href="/" onClick={props.handleNavbar}>link n3</a></li>
-                    <li><a href="/" onClick={props.handleNavbar}>link n4</a></li>
+                    <li><a href="/" onClick={toggleSidebar}>link n1</a></li>
+                    <li><a href="/" onClick={toggleSidebar}>link n2</a></li>
+                    <li><a href="/" onClick={toggleSidebar}>link n3</a></li>
+                    <li><a href="/" onClick={toggleSidebar}>link n4</a></li>
                 </NavLinks>
             </CollapseWrapper>
         );

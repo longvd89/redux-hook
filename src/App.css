@@ -6,8 +6,8 @@
 
 .App {
   flex: 1 0 auto;
-  padding: 10px;
   text-align: center;
+  display: flex;
 }
 
 .App-logo {
