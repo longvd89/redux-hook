@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import './App.css';
 
 import {
@@ -38,14 +38,15 @@ function App() {
     // const dispatch = useDispatch();
 
     // const {githubReducer} = this.props;
-
-
+    const [isSidebarOpen, setSidebarStatus] = useState(false)
+    
+    const toggleSidebar = () => setSidebarStatus(!isSidebarOpen)
 
     return (
         <ThemeProvider theme = {theme}>
             {/*<div>*/}
             <GlobalStyle/>
-                <Header/>
+                <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toogleSider} />
                 <div className="App">
                     {/*<Navigation/>*/}
 

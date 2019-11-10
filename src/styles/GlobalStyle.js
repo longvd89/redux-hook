@@ -17,10 +17,12 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 100%;
+    height: 100%; 
   }
 
   body {
     box-sizing: border-box;
+    height: 100%; 
     font-family: 'Montserrat', sans-serif;
     background: ${props => props.theme.bgColor};
   }

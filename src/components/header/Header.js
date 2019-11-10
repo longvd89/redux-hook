@@ -1,7 +1,7 @@
 /**
  * Created by vulong on 05/11/2019.
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
@@ -11,6 +11,12 @@ import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
 
 const Header = (props) => {
+    const onScroll = (arg) => console.log(arg)
+
+    useEffect(() => {
+      window.addEventListener('scroll', onScroll, false);
+    }, [])
+
     const barAnimation = useSpring({
         from: { transform: 'translate3d(0, -10rem, 0)' },
         transform: 'translate3d(0, 0, 0)',
